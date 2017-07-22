@@ -1,0 +1,552 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Story by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="echarts.min.js"></script>
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="divided">
+
+		<!-- One -->
+		<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+			<div class="content">
+				<h1>数『剧』有戏</h1>
+				<p class="major">最近一年的娱乐内容市场宛如一个珍珑棋局，百亿级别的社会资本涌入、新生影视剧公司不断出现，各大视频网站疯狂成立数十亿的产业基金来进行内容制作、产业孵化和节目研发，深入泛娱乐产业的上下游，内容产业一片欣欣向荣；另一方面，综艺“假繁荣”言论又甚嚣尘上，不少节目因零冠名零赞助裸奔而延播甚至流产，节目模式创新乏力，叫好不叫座。
+					</p>
+				<ul class="actions vertical">
+					<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+				</ul>
+			</div>
+			<div class="image">
+				<img src="images/banner.jpg" alt="" />
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+			<div class="content">
+				<h2>2017年的播放量总量超过前两年总和</h2>
+				<p>近半年来，省级卫视播放总量已经达到了2016全年总量69%，2017全年总量61%，增速迅猛</p>
+				<ul class="actions vertical">
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</div>
+			<div id="main" class="image"></div>
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('main'));
+
+				// 指定图表的配置项和数据
+				var option = {
+					title: {
+						text: '近三年省级卫视电视剧播出总量对比'
+					},
+					tooltip: {},
+					legend: {
+						data: ['播出总量']
+					},
+					xAxis: {
+						data: ["2015年", "2016年", "2017年1-5月"]
+					},
+					yAxis: {},
+					series: [{
+						name: '播出量',
+						type: 'bar',
+						data: [213, 187, 130]
+					}]
+				};
+
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			</script>
+		</section>
+
+		<!-- Three -->
+		<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+			<div class="content">
+				<h2>都市情感剧更吃香</h2>
+				<p>影视剧三强，都市、革命战争、古装占据82%，其中都市剧占比接近一半，革命战争23%，古装13%。然而在讨论热度上，古装剧远超都市和革命战争剧，网络声量达至85万，位列第一。再看综艺节目，竞技户外、文化语言、音乐歌唱是主流，其中文化语言类占比最高，深受用户青睐。</p>
+				<ul class="actions vertical">
+					<li><a href="#" class="button">Learn More</a></li>
+				</ul>
+			</div>
+			<div id="main1" class="image"></div>
+
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('main1'));
+
+				// 指定图表的配置项和数据
+				var option = {
+					backgroundColor: '#2c343c',
+
+					title: {
+						text: '2017年1-5月份播出电视剧分布',
+						left: 'center',
+						top: 20,
+						textStyle: {
+							color: '#ffffff'
+						}
+					},
+
+					tooltip: {
+						trigger: 'item',
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+
+					visualMap: {
+						show: false,
+						min: 80,
+						max: 600,
+						inRange: {
+							colorLightness: [0, 1]
+						}
+					},
+					series: [{
+						name: '2017年1-5月份播出电视剧分布',
+						type: 'pie',
+						radius: '55%',
+						center: ['50%', '50%'],
+						data: [{
+								value: 335,
+								name: '革命战争'
+							},
+							{
+								value: 310,
+								name: '古装剧'
+							},
+							{
+								value: 274,
+								name: '年代剧'
+							},
+							{
+								value: 235,
+								name: '儿童剧'
+							},
+							{
+								value: 400,
+								name: '都市情感'
+							}
+						].sort(function (a, b) {
+							return a.value - b.value;
+						}),
+						roseType: 'radius',
+						label: {
+							normal: {
+								textStyle: {
+									color: 'rgba(255, 255, 255, 0.3)'
+								}
+							}
+						},
+						labelLine: {
+							normal: {
+								lineStyle: {
+									color: 'rgba(255, 255, 255, 0.3)'
+								},
+								smooth: 0.2,
+								length: 10,
+								length2: 20
+							}
+						},
+						itemStyle: {
+							normal: {
+								color: '#c23531',
+								shadowBlur: 200,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						},
+
+						animationType: 'scale',
+						animationEasing: 'elasticOut',
+						animationDelay: function (idx) {
+							return Math.random() * 200;
+						}
+					}]
+				};
+
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			</script>
+		</section>
+	</div>
+	</section>
+
+	<!-- Four -->
+	<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+		<div class="content">
+			<h2>"沿海地区女性为影视综艺用户主力军</h2>
+			<p>沿海发达城市的女性依然是娱乐内容消费的绝对主力，占全部受众的72%，然而在受众兴趣标签方面还是出现了变化，“宅”、“动漫”这类新型标签开始大量涌现。
+			</p>
+		</div>
+		
+		<div id="main2" class="image">
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('main2'));
+
+var option = {
+    backgroundColor: '#ffffff ',
+
+					title: {
+						text: '2017年1-5月份播出电视剧用户性别占比',
+						left: 'center',
+						top: 20,
+						textStyle: {
+							color: '#2c343c'
+							
+						}
+					},
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+         top: 'bottom',
+        data:['女性','男性']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:30, name:'男性'},
+                {value:70, name:'女性'},
+                
+            ]
+        }
+    ]
+};
+// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			</script>
+		</section>
+		</div>
+	</section>
+
+	<!-- Five -->
+	<section class="wrapper style1 align-center">
+		<div class="inner">
+			<h2>Massa sed condimentum</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec
+				facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum
+				odio lorem ipsum.</p>
+		</div>
+
+		<!-- Gallery -->
+		<div class="gallery style2 medium lightbox onscroll-fade-in">
+			<article>
+				<a href="images/gallery/fulls/01.jpg" class="image">
+										<img src="images/gallery/thumbs/01.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Ipsum Dolor</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/02.jpg" class="image">
+										<img src="images/gallery/thumbs/02.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Feugiat Lorem</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/03.jpg" class="image">
+										<img src="images/gallery/thumbs/03.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Magna Amet</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/04.jpg" class="image">
+										<img src="images/gallery/thumbs/04.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Sed Tempus</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/05.jpg" class="image">
+										<img src="images/gallery/thumbs/05.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Ultrices Magna</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/06.jpg" class="image">
+										<img src="images/gallery/thumbs/06.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Sed Tempus</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/07.jpg" class="image">
+										<img src="images/gallery/thumbs/07.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Ipsum Lorem</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/08.jpg" class="image">
+										<img src="images/gallery/thumbs/08.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Magna Risus</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/09.jpg" class="image">
+										<img src="images/gallery/thumbs/09.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Tempus Dolor</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/10.jpg" class="image">
+										<img src="images/gallery/thumbs/10.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Sed Etiam</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/11.jpg" class="image">
+										<img src="images/gallery/thumbs/11.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Magna Lorem</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+			<article>
+				<a href="images/gallery/fulls/12.jpg" class="image">
+										<img src="images/gallery/thumbs/12.jpg" alt="" />
+									</a>
+				<div class="caption">
+					<h3>Ipsum Dolor</h3>
+					<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+					<ul class="actions">
+						<li><span class="button small">Details</span></li>
+					</ul>
+				</div>
+			</article>
+		</div>
+
+	</section>
+
+	<!-- Six -->
+	<section class="wrapper style1 align-center">
+		<div class="inner">
+			<h2>Ipsum sed consequat</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec
+				facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum
+				odio lorem ipsum.</p>
+			<div class="items style1 medium onscroll-fade-in">
+				<section>
+					<span class="icon style2 major fa-diamond"></span>
+					<h3>Lorem</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-save"></span>
+					<h3>Ipsum</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-bar-chart"></span>
+					<h3>Dolor</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-wifi"></span>
+					<h3>Amet</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-cog"></span>
+					<h3>Magna</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-paper-plane"></span>
+					<h3>Tempus</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-desktop"></span>
+					<h3>Aliquam</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-refresh"></span>
+					<h3>Elit</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-hashtag"></span>
+					<h3>Morbi</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-bolt"></span>
+					<h3>Turpis</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-envelope"></span>
+					<h3>Ultrices</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+				<section>
+					<span class="icon style2 major fa-leaf"></span>
+					<h3>Risus</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper.
+						Etiam eget ultrices risus nec tempor elit.</p>
+				</section>
+			</div>
+		</div>
+	</section>
+
+	<!-- Seven -->
+	<section class="wrapper style1 align-center">
+		<div class="inner medium">
+			<h2>Get in touch</h2>
+			<form method="post" action="#">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" value="" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" value="" />
+				</div>
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+				</ul>
+			</form>
+
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="wrapper style1 align-center">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</div>
+	</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
